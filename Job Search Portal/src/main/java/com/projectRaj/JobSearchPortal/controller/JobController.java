@@ -46,7 +46,7 @@ public class JobController {
         return jobService.getAllJobsByJobTypeAndSalaryGreaterThan(jobType,salary);
     }
 
-    @GetMapping("api/custumFinder/jobsByTitle/{jobTitle}/salary/{salary}")
+    @GetMapping("api/custumFinder/jobsByTitle/salary/{salary}")
     public List<Job> getAllJobsByTitleAndSalary(@RequestParam String jobTitle,@PathVariable Double salary){
         return jobService.getByTitleAndsalary(jobTitle,salary);
     }
@@ -63,5 +63,10 @@ public class JobController {
     @DeleteMapping("api/custumQuery/job/id/{jobId}")
     public String deleteByJobId(@PathVariable Long jobId){
         return jobService.deleteByJobId(jobId);
+    }
+
+    @GetMapping("api/custumQuery/job/title/description")
+    public List<Job> searchJobsByTitleOrDescription(@RequestParam String title, @RequestParam String description) {
+        return jobService.searchJobsByTitleOrDescription(title,description);
     }
 }

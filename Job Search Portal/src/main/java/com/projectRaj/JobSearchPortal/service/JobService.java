@@ -98,6 +98,9 @@ public class JobService {
         return errorMsg;
     }
 
+    public List<Job> searchJobsByTitleOrDescription(String title, String description) {
+        return jobRepository.findByTitleContainingOrDescriptionContaining(title, description);
+    }
 }
 
 

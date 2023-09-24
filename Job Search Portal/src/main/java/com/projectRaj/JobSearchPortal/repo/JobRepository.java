@@ -29,4 +29,6 @@ public interface JobRepository extends CrudRepository<Job, Long> {
     @Modifying
     @Query(value = "DELETE FROM Job job WHERE job.id = :jobId" ,nativeQuery = true)
     void deleteJobById(@Param("jobId") Long jobId);
+
+    List<Job> findByTitleContainingOrDescriptionContaining(String title, String description);
 }
