@@ -171,8 +171,18 @@ To use the Job Search Portal, follow these steps:
 -  **Logic:** It attempts to find the job with the specified ID in the database using the jobRepository. If the job is found, it is deleted from the database.
 -  **Return Value:** A message indicating that the job data has been deleted, or an error message if the job with the given ID was not found.
 
+**11. getByTitleOrDescription(String jobTitle, String description)**
+
+-  **Description:** This method retrieves job listings with a specific title strings and a description content from the request params.
+-  **Parameters:**
+   1. jobTitle: The job title to be searched for.  
+   2. description: Some contents for job listings.
+-  **Logic:** It uses the jobRepository to find and return a list of job listings that match both the title or description criteria.
+-  **Return Value:** A list of job listings that meet the specified title or description criteria.
+
 
 These service methods provide the core functionality for managing job listings within the Job Search Portal application. They interact with the repository and database to perform the necessary operations based on user requests and search criteria.
+
 
 ## Controller Methods in JobController
 In the Job Search Portal project, the controllers define several API endpoints that allow clients to interact with the application. Here's an explanation of each API endpoint defined in the JobController class:
@@ -304,7 +314,7 @@ This endpoint allows clients to update the salaries of job listings of a specifi
 **Response:**
 A message indicating that salaries have been updated for the specified job type.
 
-### Delete Job by ID (Custom Query)
+### Delete Job by ID
 
 **Endpoint:**
 ``` 
@@ -317,6 +327,19 @@ DELETE /api/custumQuery/job/id/{jobId}
 **Response:**
 A message indicating that the job data has been deleted, or an error message if the job with the given ID was not found.
 
+### Get Jobs by title or Description
+
+**Endpoint:**
+``` 
+GET http://localhost:8080api/custumQuery/job/title/description
+```
+**Description:**
+- Clients can retrieve job listings of a specific job title with jobs contains the title or descriptions.
+- Request Parameter: jobTitle (Strings) - The type of job listings .
+- Request Parameter: description (Strings) - The type of job listings to be retrieved.
+
+**Response:**
+A JSON array containing job listings that meet the specified job title or description criteria.
 
 These API endpoints define the functionality and operations that clients can perform when interacting with the Job Search Portal application. Clients can use these endpoints to add, retrieve, update, and delete job listings, as well as perform custom searches and updates based on various criteria.
 
