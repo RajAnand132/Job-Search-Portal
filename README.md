@@ -385,7 +385,7 @@ http://localhost:8080/swagger-ui/index.html#/
 If you have any questions, issues, or need further assistance related to the Job Search Portal project, feel free to contact us. We are here to help!
 
 - **Raj Anand**
-  - Email: rajanandirctc@example.com
+  - Email: rajanandxxxx@example.com
   - LinkedIn: [Raj Anand's LinkedIn Profile]()
   - GitHub: [Raj Anand's GitHub Profile]()
 
